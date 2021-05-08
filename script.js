@@ -20,6 +20,7 @@ function checkNumber(){
         message.textContent = "Not a Number"
     }else if(guessNumber === secretNumber) {
         message.textContent = "Correct Number !"
+        highScore.textContent = updateScore;
         document.body.style.background = "green"
     }else if(guessNumber > secretNumber){
         if(updateScore > 1){
@@ -45,3 +46,9 @@ function checkNumber(){
 }
 
 check.addEventListener("click", checkNumber)
+
+function reset(){
+
+}
+
+again.addEventListener('click', reset);
