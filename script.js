@@ -13,6 +13,8 @@ let secretNumber = Math.trunc(Math.random()*20);
 
 let updateScore = 20;
 
+let highS = 0;
+
 function checkNumber(){
 
     let guessNumber = Number(guess.value);
@@ -23,6 +25,11 @@ function checkNumber(){
         number.textContent = secretNumber
         highScore.textContent = updateScore;
         document.body.style.background = "green"
+
+        if(score > highS) {
+           highS = score
+           highScore.textContent = highS
+        }
     }else if(guessNumber > secretNumber){
         if(updateScore > 1){
             message.textContent = "Too High";
